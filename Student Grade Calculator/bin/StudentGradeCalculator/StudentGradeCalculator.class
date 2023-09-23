@@ -1,0 +1,46 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+package StudentGradeCalculator;
+
+import java.util.Scanner;
+
+public class StudentGradeCalculator {
+   public StudentGradeCalculator() {
+   }
+
+   public static void main(String[] args) {
+      Scanner s = new Scanner(System.in);
+      System.out.println("No. of Subjects: ");
+      int subjects = s.nextInt();
+      int marksObtained = 0;
+      int[] marks = new int[subjects];
+
+      for(int i = 0; i < subjects; ++i) {
+         System.out.println("marks Obtained in Subject" + (i + 1) + ": ");
+         marks[i] = s.nextInt();
+         marksObtained += marks[i];
+      }
+
+      double percentage = (double)marksObtained / (double)subjects;
+      String finalgrade = null;
+      if (percentage >= 90.0) {
+         finalgrade = "O";
+      } else if (percentage >= 80.0) {
+         finalgrade = "A+";
+      } else if (percentage >= 70.0) {
+         finalgrade = "A";
+      } else if (percentage >= 60.0) {
+         finalgrade = "B+";
+      } else if (percentage >= 50.0) {
+         finalgrade = "B";
+      } else if (percentage >= 40.0) {
+         finalgrade = "C";
+      } else if (percentage >= 30.0) {
+         finalgrade = "F";
+      }
+
+      System.out.println("Marks Obtained: " + marksObtained);
+      System.out.println("Percentage: " + percentage + "%");
+      System.out.println("Grade: " + finalgrade);
+      s.close();
+   }
+}
