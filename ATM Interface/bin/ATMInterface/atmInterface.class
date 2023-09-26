@@ -1,0 +1,14 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+package ATMInterface;
+
+public class atmInterface {
+   public atmInterface() {
+   }
+
+   public static void main(String[] args) {
+      double initialBalance = 50000.0;
+      financial financial = new financial(initialBalance);
+      solution solution = new solution(financial);
+      solution.run();
+   }
+}
